@@ -1,0 +1,23 @@
+def slide() do
+  column(
+    [
+      height(fill()),
+      width(fill()),
+      padding(48),
+      spacing(48),
+      Background.color(color(:black)),
+      Font.color(color(:white)),
+      Font.size(48)
+    ],
+    [
+      el([center_x(), center_y()], text("Stateful components, not even once.")),
+      el(
+        [width(fill()), Font.family("monospace"), Font.size(22)],
+        Makeup.highlight("IO.puts(:hello)",
+          formatter: Makeup.Formatters.Emerge,
+          formatter_options: [style: :monokai_style]
+        )
+      )
+    ]
+  )
+end
